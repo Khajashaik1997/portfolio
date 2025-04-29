@@ -1,0 +1,423 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Modern font */
+  background: url('/src/0e39c256714a4b7c0299323a82701647.jpg') no-repeat center center fixed;
+  background-size: cover; /* Ensure the image covers the entire background */
+  color: #f8fafc;
+  font-size: 16px; /* Base font size for scaling */
+}
+
+body.dark {
+  background: url('/src/0e39c256714a4b7c0299323a82701647.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #1e293b;
+}
+
+.home-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add this rule to hide the navigation bar or header */
+header {
+  display: none; /* Hides the header */
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 100px 20px; /* Adjust padding for smaller screens */
+  background: linear-gradient(135deg, #1e293b, #0f172a); /* Softer gradient */
+  color: #f8fafc;
+  animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.dark .hero-section {
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+  color: #1e293b;
+}
+
+.hero-section h1 {
+  font-size: 3rem; /* Adjust headline size */
+  font-weight: bold;
+  margin: 0;
+  color: #38bdf8;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+body.dark .hero-section h1 {
+  color: #0ea5e9;
+}
+
+.hero-section p {
+  font-size: 1rem; /* Adjust paragraph size */
+  margin: 20px 0;
+  color: #94a3b8;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px; /* Larger button */
+  background: #38bdf8;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem; /* Adjust button size */
+  border-radius: 10px;
+  transform: scale(1);
+  transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+  background: #0ea5e9;
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Section Styles */
+.section-content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+body.dark .section-content {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.section-content:hover {
+  transform: translateY(-10px); /* Lift section slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.section-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: url('/src/images/developer-background.jpg') no-repeat center center; /* Add developer-themed background */
+  background-size: cover; /* Ensure the background covers the section */
+  color: #ffffff; /* Ensure text is readable on the background */
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #38bdf8; /* Highlight the section title */
+}
+
+.skills-grid {
+  display: grid; /* Use grid layout for better alignment */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust minimum width for smaller screens */
+  gap: 40px; /* More spacing between items */
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+.skill-card {
+  background: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  width: 150px; /* Set a consistent width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effects */
+  display: flex; /* Use flexbox for centering content */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  --skill-percentage: 75%; /* Set the percentage for each skill */
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+
+.skill-card .circular-progress {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #38bdf8 0%, /* Start at 0% */
+    rgba(255, 255, 255, 0.1) 0%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: progressAnimation 1.5s ease-in-out forwards; /* Apply animation by default */
+  animation-delay: 0.2s; /* Add a slight delay for smoothness */
+}
+
+.skill-card:hover .circular-progress {
+  animation: none; /* Prevent restarting the animation on hover */
+}
+
+@keyframes progressAnimation {
+  0% {
+    background: conic-gradient(
+      #38bdf8 0%, /* Start at 0% */
+      rgba(255, 255, 255, 0.1) 0%
+    );
+  }
+  100% {
+    background: conic-gradient(
+      #38bdf8 var(--skill-percentage), /* End at the dynamically set percentage */
+      rgba(255, 255, 255, 0.1) 0%
+    );
+  }
+}
+
+.skill-card .circular-progress .percentage {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.skill-card .skill-name {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 50px 20px;
+  text-align: center; /* Center-align the section */
+  background: url('/src/images/projects-background.jpg') no-repeat center center; /* Add developer-themed background */
+  background-size: cover; /* Ensure the background covers the section */
+  color: #ffffff; /* Ensure text is readable on the background */
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #38bdf8; /* Highlight the section title */
+}
+
+.projects-grid {
+  display: flex; /* Use flexbox for alignment */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 30px;
+  justify-content: center; /* Center the project cards */
+}
+
+.project-card {
+  background: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background */
+  padding: 20px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  width: 100%; /* Full width for smaller screens */
+  max-width: 300px; /* Limit width for larger screens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effects */
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #38bdf8; /* Highlight project titles */
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #ffffff; /* Ensure text is readable */
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 40px 20px; /* Adjust padding for smaller screens */
+  background: rgba(255, 255, 255, 0.05);
+  animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.contact-section a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 1.1rem; /* Larger font for better readability */
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Download Button */
+.download-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px; /* Increased padding for better visibility */
+  background: #38bdf8;
+  color: #ffffff; /* Changed text color to white for better contrast */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem; /* Increased font size */
+  border-radius: 8px; /* Slightly larger border radius */
+  border: 2px solid #0ea5e9; /* Added border for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for visibility */
+  transition: transform 0.3s ease, background 0.3s ease; /* Smooth scaling effect */
+  transform: scale(1);
+}
+
+body.dark .download-button {
+  background: #0ea5e9;
+  color: #1e293b;
+  border-color: #38bdf8;
+}
+
+.download-button:hover {
+  background: #0ea5e9;
+  color: #ffffff; /* Ensure text remains white on hover */
+  border-color: #38bdf8;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+body.dark .download-button:hover {
+  background: #38bdf8;
+  color: #1e293b;
+  border-color: #0ea5e9;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #38bdf8;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background: #0ea5e9;
+  transform: scale(1.1);
+}
+
+body.dark .dark-mode-toggle {
+  background: #0ea5e9;
+  color: #1e293b;
+}
+
+body.dark .dark-mode-toggle:hover {
+  background: #38bdf8;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 0.8rem; /* Adjust font size for smaller screens */
+}
+
+.footer a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem; /* Smaller headline for tablets */
+  }
+
+  .hero-section p {
+    font-size: 0.9rem; /* Smaller paragraph for tablets */
+  }
+
+  .skills-grid {
+    gap: 20px; /* Reduce gap between skill cards */
+  }
+
+  .project-card {
+    padding: 15px; /* Reduce padding for project cards */
+  }
+
+  .contact-section {
+    padding: 30px 15px; /* Reduce padding for contact section */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem; /* Smaller headline for mobile */
+  }
+
+  .hero-section p {
+    font-size: 0.8rem; /* Smaller paragraph for mobile */
+  }
+
+  .hero-button {
+    font-size: 0.9rem; /* Smaller button for mobile */
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller skill cards */
+  }
+
+  .project-card {
+    padding: 10px; /* Reduce padding for mobile */
+  }
+
+  .footer {
+    font-size: 0.7rem; /* Smaller footer text */
+  }
+}
