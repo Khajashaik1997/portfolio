@@ -34,6 +34,23 @@ const projects = [
     liveDemo: "#",
     github: "#",
   },
+  {
+    name: "Impetus",
+    description: "A scalable backend system for real-time data processing and automation workflows, streamlining operations with asynchronous task execution, data transformation, and cloud integration.",
+    techStack: [
+      "Python", 
+      "FastAPI", 
+      "Temporal", 
+      "PostgreSQL", 
+      "MongoDB", 
+      "Redis", 
+      "Docker", 
+      "AWS Batch", 
+      "Kafka"
+    ],
+    liveDemo: "#",
+    github: "#",
+  },
 ];
 
 function Home() {
@@ -55,7 +72,13 @@ function Home() {
       <section className="hero-section">
         <div className="hero-content">
           <h1>Hi, I’m Shaik Khajapeer</h1>
-          <p>Full-Stack Developer who loves clean code and modern UI.</p>
+          <p>
+            A competent professional with over 4+ years of experience in Python. Expertise in developing business logic, 
+            maintaining version control systems like GIT, and working with Python IDEs such as PyCharm and VS Code. 
+            Proficient in object-oriented programming (OOPs) concepts, RESTful architecture, and deploying projects using GIT. 
+            Skilled in handling multiple tasks, working independently or in a team, and delivering web applications on time. 
+            Known for quick learning and applying new tools and technologies effectively.
+          </p>
           <a href="#projects" className="hero-button">View My Work</a>
         </div>
       </section>

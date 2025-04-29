@@ -1,0 +1,24 @@
+/* ...existing code... */
+.hero h1, .hero p, .cta-button {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.projects img {
+  max-width: 100%;
+  height: auto;
+  alt: "Project screenshot";
+}
+
+button, a {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero, .projects, .about, .contact {
+    padding: 20px;
+  }
+}
+/* ...existing code... */
